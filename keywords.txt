@@ -5,4 +5,4 @@ EventTimer	KEYWORDS1
 # PublicMethods
 CheckTimer	KEYWORDS2
 StartTimer	KEYWORDS2
-StopTimer	KEYWORDS2
+StopTimer KEYWORDS2
