@@ -67,7 +67,7 @@ void setup()
 {
   // -- Serial --
   Serial.begin(9600);
-  
+
   // -- Iniciar Led
   pinMode(LED_BUILTIN, OUTPUT);
 
@@ -84,7 +84,8 @@ void loop()
 }
 
 void updateTimers(){
-  if( evento1.CheckTimer() ){
+  if( evento1.CheckTimer() )
+  {
     Serial.println("EVENTO 1");
     ParpadearLed();
   }
