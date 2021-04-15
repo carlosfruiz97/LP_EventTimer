@@ -30,7 +30,7 @@ void StartTimer(unsigned long T = 0);
 
 ---
 ```cpp
-void StartTimer(unsigned long T = 0);
+void StopTimer();
 ```
 __Descripción:__ Para el timer.
 
@@ -50,7 +50,7 @@ eventos dentro de una función llamada **UpdateTimers**, donde se llame el metod
 *  `bool on_rise_only` ¿Configura si la función devolverá *true* solo una vez al
 pasar el tiempo? ¿o continuamente *true* si ha pasado el tiempo?
   * Si `on_rise_only = false`
-    	* Solo comprueba si delta_t > Duracion.
+    * Solo comprueba si delta_t > Duracion.
   * Si `on_rise_only = true`
     *  Solo devuelve 1 una vez despues de que haya pasado el tiempo.
        Útil para eventos que solo se hace una accion al acabar/duracion
@@ -96,7 +96,4 @@ void ParpadearLed(){
   delay(500);
   digitalWrite(LED_BUILTIN, HIGH);
 }
-
-
-
 ```
