@@ -21,6 +21,10 @@ public:
   //  'M': minutos
   //  'h': horas
   EventTimer(unsigned long T, char tunit = 'm');
+  EventTimer();
+
+  // Configurar timer despues de inicializarlo
+  void SetupTimer(unsigned long T, char tunit = 'm');
 
   // Llamar dentro de UpdateTimers para comprobar si hay que ejecutar
   // la accion o no.
@@ -44,8 +48,23 @@ public:
 
 
 // == Constructor ==============================================================
+EventTimer::EventTimer()
+{
+  // nothing
+  this->t_inicio = -1;
+}
 EventTimer::EventTimer(unsigned long T, char tunit){
   this->t_inicio = -1;
+  this->tunit = tunit;
+  if(tunit == 'm')       this->T_duracion = T;            // milisegundos
+  else if(tunit == 's')  this->T_duracion = T*1000;       // segundos
+  else if(tunit == 'M')  this->T_duracion = T*1000*60;    // minutos
+  else if(tunit == 'h')  this->T_duracion = T*1000*60*60; // horas
+}
+
+
+void EventTimer::SetupTimer(unsigned long T, char tunit)
+{
   this->tunit = tunit;
   if(tunit == 'm')       this->T_duracion = T;            // milisegundos
   else if(tunit == 's')  this->T_duracion = T*1000;       // segundos

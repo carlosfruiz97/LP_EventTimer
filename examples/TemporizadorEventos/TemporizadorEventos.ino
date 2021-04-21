@@ -51,6 +51,8 @@ EventTimer evento1(2000); // m
 EventTimer evento2(5, 's');
 EventTimer evento3(10, 'M');
 EventTimer evento4(1, 'h');
+EventTimer evento5;
+EventTimer evento6;
 
 // ==== FUNCIONES ================================================
 void updateTimers();
@@ -76,6 +78,8 @@ void setup()
     evento2.StartTimer();
     evento3.StartTimer();
     evento4.StartTimer();
+    evento5.StartTimer(2000, 'm');
+    evento6.SetupTimer(2500, 'm');
 }
 
 // ===============================================================
@@ -99,6 +103,7 @@ void updateTimers(){
   
   if(evento2.CheckTimer()){
     LOGN("EVENTO 2"); ParpadearLed();
+    evento6.StopTimer();
   }
   
   if(evento3.CheckTimer()){
@@ -107,5 +112,14 @@ void updateTimers(){
   
   if(evento4.CheckTimer()){
     LOGN("EVENTO 4"); ParpadearLed();
+  }
+
+  if(evento5.CheckTimer()){
+    LOGN("EVENTO 4"); ParpadearLed();
+    evento6.StartTimer();
+  }
+
+  if(evento6.CheckTimer(false)){
+    LOGN("EVENTO 6");
   }
 }

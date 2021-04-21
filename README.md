@@ -8,6 +8,11 @@ Lista completa de los metodos de esta clase:
 
 ```cpp
 EventTimer(unsigned long T, char tunit = 'm');
+// ej: EventTimer timer(2, 's');
+
+// Alternativa:
+EventTimer();
+// ej: EventTimer timer; // inicializar con SetupTimer
 ```
 
 **Decripción:** Constructor de la clase.
@@ -18,6 +23,14 @@ EventTimer(unsigned long T, char tunit = 'm');
     *  `tunit= 's'` : segundos
     *  `tunit= 'M'` : minutos
     *  `tunit= 'h'` : horas
+
+
+Si queremos inicializar el timer despues:
+```cpp
+void SetupTimer(unsigned long T, char tunit = 'm');
+//  EventTimer timer;
+//  timer.SetupTimer(1,'s');
+```
 
 ---
 ```cpp

@@ -6,3 +6,4 @@ EventTimer	KEYWORDS1
 CheckTimer	KEYWORDS2
 StartTimer	KEYWORDS2
 StopTimer	KEYWORDS2
+SetupTimer	KEYWORDS2
