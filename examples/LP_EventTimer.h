@@ -35,7 +35,7 @@ public:
   // Si no se ha llamado, CheckTimer devolvera 0
   // T por si se quiere cambiar la duracion en cualquier momento.
   //    si 0, se mantendra el anterior
-  void StartTimer(unsigned long T = 0, char new_tunit = 'N');
+  void StartTimer(unsigned long T = 0);
 
   // Para timer aunque haya pasado el tiempo. No lo activa
   void StopTimer();
@@ -53,17 +53,9 @@ EventTimer::EventTimer(unsigned long T, char tunit){
   else if(tunit == 'h')  this->T_duracion = T*1000*60*60; // horas
 }
 
-void EventTimer::StartTimer(unsigned long T, char new_tunit){
+void EventTimer::StartTimer(unsigned long T){
   // Actualzar la duraicon
-  if(T != 0 )
-  {
-    if (new_tunit != 'N') this->tunit = new_tunit;
-
-    if(tunit == 'm')       this->T_duracion = T;            // milisegundos
-    else if(tunit == 's')  this->T_duracion = T*1000;       // segundos
-    else if(tunit == 'M')  this->T_duracion = T*1000*60;    // minutos
-    else if(tunit == 'h')  this->T_duracion = T*1000*60*60; // horas
-  }
+  if(T != 0 ) this->T_duracion = T;
 
   // Iniciar timer
   this->t_inicio = millis();

@@ -21,12 +21,14 @@ EventTimer(unsigned long T, char tunit = 'm');
 
 ---
 ```cpp
-void StartTimer(unsigned long T = 0);
+void StartTimer(unsigned long T = 0, char new_tunit = '-');
 ```
 
 **Decripción:** Llamar para inciar el Timer. Si no se llama, __CheckTimer__ devolverá __false__.
 
 * `unsigned long T` Nuevo tiempo por si se queiere cambiar.
+* `char new_tunit = 'm'` Por si se quiere cambiar tambien la unidad.
+'N' indica que se mantiene la original
 
 ---
 ```cpp
