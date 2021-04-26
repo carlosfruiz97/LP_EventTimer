@@ -1,3 +1,6 @@
+# TO DO
+- Poner Metodo para revisar si el timer esta activo
+
 Librería de Arduino para gestionar eventos sin delays y de manera ordenada.
 La librería se basa en la clase **EventTimer**.
 
